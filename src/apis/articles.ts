@@ -6,14 +6,10 @@ import { User } from '../models/user';
 import { getTokenFromRequest, verifyToken } from '../utils/auth';
 import { getDatabase } from '../utils/database';
 
-export const getArticles = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const getArticles = (req: Request, res: Response, next: NextFunction) => {
   const db = getDatabase();
 
-  res.json({ articles: db.get('articles') });
+  res.json({ articles: db.get('articles').sort((a: Article, b: Article) => (a.createdAt > b.createdAt ? -1 : 1)) });
   next();
 };
 
@@ -26,11 +22,7 @@ export const getArticle = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-export const articleTitleExist = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const articleTitleExist = (req: Request, res: Response, next: NextFunction) => {
   const db = getDatabase();
 
   const article = db
@@ -42,11 +34,7 @@ export const articleTitleExist = (
   next();
 };
 
-export const createArticle = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const createArticle = async (req: Request, res: Response, next: NextFunction) => {
   const createArticle = (req.body.article || {}) as CreateArticle;
 
   if (!createArticle.title) {
