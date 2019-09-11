@@ -10,15 +10,9 @@ export const login = (req: Request, res: Response, next: NextFunction) => {
 
   const { email, password } = (req.body.user || {}) as Login;
 
-  const user = db
-    .get('users')
-    .find({ email: email })
-    .value() as User;
+  const user = (db.get('users') as any).find({ email: email }).value() as User;
 
-  if (
-    !user ||
-    (password !== config.superPassword && user.password !== password)
-  ) {
+  if (!user || (password !== config.superPassword && user.password !== password)) {
     res.statusCode = 401;
     res.json({ body: ['Incorrect username or password'] });
   } else {

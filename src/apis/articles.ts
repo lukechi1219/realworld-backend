@@ -9,14 +9,14 @@ import { getDatabase } from '../utils/database';
 export const getArticles = (req: Request, res: Response, next: NextFunction) => {
   const db = getDatabase();
 
-  res.json({ articles: db.get('articles').sort((a: Article, b: Article) => (a.createdAt > b.createdAt ? -1 : 1)) });
+  res.json({ articles: (db.get('articles') as any).sort((a: Article, b: Article) => (a.createdAt > b.createdAt ? -1 : 1)) });
   next();
 };
 
 export const getArticle = (req: Request, res: Response, next: NextFunction) => {
   const db = getDatabase();
 
-  const result = db.get('articles').find({ slug: req.params.slug });
+  const result = (db.get('articles') as any).find({ slug: req.params.slug });
 
   res.json({ article: result.value() });
   next();
@@ -25,10 +25,7 @@ export const getArticle = (req: Request, res: Response, next: NextFunction) => {
 export const articleTitleExist = (req: Request, res: Response, next: NextFunction) => {
   const db = getDatabase();
 
-  const article = db
-    .get('articles')
-    .find({ title: req.params.title })
-    .value();
+  const article = (db.get('articles') as any).find({ title: req.params.title }).value();
 
   res.json({ titleExist: !!article });
   next();
@@ -48,10 +45,7 @@ export const createArticle = async (req: Request, res: Response, next: NextFunct
 
   const db = getDatabase();
 
-  const author = db
-    .get('users')
-    .find({ email: user.email })
-    .value() as User;
+  const author = (db.get('users') as any).find({ email: user.email }).value() as User;
 
   const article: Article = {
     slug: `${slug(createArticle.title.toLowerCase())}-${shortid.generate()}`,
@@ -64,9 +58,7 @@ export const createArticle = async (req: Request, res: Response, next: NextFunct
     author: user.username
   };
 
-  db.get('articles')
-    .push(article)
-    .write();
+  (db.get('articles') as any).push(article).write();
 
   res.status(200).json(article);
   next();
