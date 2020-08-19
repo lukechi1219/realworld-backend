@@ -11,63 +11,43 @@
   ],
   "articles": [
     {
-      "slug": "how-to-train-your-dragon",
-      "title": "How to train your dragon",
-      "description": "Ever wonder how?",
-      "body": "You have to believe",
+      "id": "1",
+      "title": "Title (1)",
+      "description": "This is description (1)",
+      "body": "This is article body (1)",
       "tagList": [
-        "reactjs",
-        "angularjs",
-        "dragons"
+        "angular"
       ],
       "createdAt": "2019-04-25T12:45:37.095Z",
       "updatedAt": "2019-04-25T12:45:37.095Z",
-      "author": "mike"
-    },
-    {
-      "slug": "title-title-test-woC4fDWNy",
-      "title": "title title test",
-      "description": "test test test test",
-      "body": "test test test test",
-      "tagList": [
-        "Angular2",
-        "HTML",
-        "CSS"
-      ],
-      "createdAt": "2019-08-27T13:27:40.136Z",
-      "updatedAt": "2019-08-27T13:27:40.136Z",
       "author": "miniasp"
     },
     {
-      "slug": "how-to-train-your-dragon-bIofcQo",
-      "title": "How to train your dragon",
-      "description": "Ever wonder how?",
-      "body": "You have to believe",
+      "id": "2",
+      "title": "Title (2)",
+      "description": "This is description (2)",
+      "body": "This is article body (2)",
       "tagList": [
-        "reactjs",
-        "angularjs",
-        "dragons"
+        "html"
       ],
-      "createdAt": "2019-09-11T12:59:45.824Z",
-      "updatedAt": "2019-09-11T12:59:45.824Z",
-      "author": "mike"
+      "createdAt": "2019-04-25T12:45:37.095Z",
+      "updatedAt": "2019-04-25T12:45:37.095Z",
+      "author": "miniasp"
     },
     {
-      "slug": "how-to-train-your-dragon-Ld9Us15",
-      "title": "How to train your dragon",
-      "description": "Ever wonder how?",
-      "body": "You have to believe",
+      "id": "3",
+      "title": "Title (3)",
+      "description": "This is description (23)",
+      "body": "This is article body (3)",
       "tagList": [
-        "reactjs",
-        "angularjs",
-        "dragons"
+        "css"
       ],
-      "createdAt": "2019-09-11T13:00:42.749Z",
-      "updatedAt": "2019-09-11T13:00:42.749Z",
-      "author": "mike"
+      "createdAt": "2019-04-25T12:45:37.095Z",
+      "updatedAt": "2019-04-25T12:45:37.095Z",
+      "author": "miniasp"
     },
     {
-      "slug": "how-to-train-your-dragon-0iIWPpM",
+      "id": 4,
       "title": "How to train your dragon",
       "description": "Ever wonder how?",
       "body": "You have to believe",
@@ -76,23 +56,9 @@
         "angularjs",
         "dragons"
       ],
-      "createdAt": "2019-09-11T13:00:44.889Z",
-      "updatedAt": "2019-09-11T13:00:44.889Z",
-      "author": "mike"
-    },
-    {
-      "slug": "how-to-train-your-dragon-2Zy0olW",
-      "title": "How to train your dragon",
-      "description": "Ever wonder how?",
-      "body": "You have to believe",
-      "tagList": [
-        "reactjs",
-        "angularjs",
-        "dragons"
-      ],
-      "createdAt": "2019-09-11T13:00:51.577Z",
-      "updatedAt": "2019-09-11T13:00:51.577Z",
-      "author": "mike"
+      "createdAt": "2020-08-19T09:11:56.273Z",
+      "updatedAt": "2020-08-19T09:11:56.273Z",
+      "author": "miniasp"
     }
   ]
 }

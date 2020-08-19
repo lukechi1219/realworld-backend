@@ -16,7 +16,7 @@ export const getArticles = (req: Request, res: Response, next: NextFunction) => 
 export const getArticle = (req: Request, res: Response, next: NextFunction) => {
   const db = getDatabase();
 
-  const result = (db.get('articles') as any).find({ slug: req.params.slug });
+  const result = (db.get('articles') as any).find({ id: req.params.id });
 
   res.json({ article: result.value() });
   next();
@@ -48,7 +48,7 @@ export const createArticle = async (req: Request, res: Response, next: NextFunct
   const author = (db.get('users') as any).find({ email: user.email }).value() as User;
 
   const article: Article = {
-    slug: `${slug(createArticle.title.toLowerCase())}-${shortid.generate()}`,
+    id: (db.get('articles').value() as any[]).length + 1,
     title: createArticle.title,
     description: createArticle.description,
     body: createArticle.body,
