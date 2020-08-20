@@ -48,7 +48,7 @@ export const createArticle = async (req: Request, res: Response, next: NextFunct
   const author = (db.get('users') as any).find({ email: user.email }).value() as User;
 
   const article: Article = {
-    id: (db.get('articles').value() as any[]).length + 1,
+    id: ((db.get('articles').value() as any[]).length + 1).toString(),
     title: createArticle.title,
     description: createArticle.description,
     body: createArticle.body,
